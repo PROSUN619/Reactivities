@@ -1,50 +1,28 @@
+import { observer } from "mobx-react-lite";
 import React from "react";
 import { Grid, GridColumn } from "semantic-ui-react";
-import { Activity } from "../../../app/models/activity";
+import { useStore } from "../../../app/stores/store";
 import ActivityDetails from "../details/ActivityDetails";
 import ActivityForm from "../form/ActivityForm";
 import ActivityList from "./ActivityList";
 
-interface Props {
-    activities: Activity[];
-    selectedActivity: Activity | undefined;
-    selectActivity: (id: String) => void;
-    cancelSelectActivity: () => void;
-    editMode: boolean;
-    openForm: (id: string) => void;
-    closeForm: () => void;
-    createOrEdit: (activity: Activity) => void;
-    deleteActivity: (id: string) => void;
-    submitting: boolean;
-}
 
-export function ActivityDashBoard({ activities, selectedActivity,
-    selectActivity, cancelSelectActivity, deleteActivity,
-    editMode, openForm, closeForm, createOrEdit, submitting }: Props) {
+export default observer(function ActivityDashBoard() {
+
+    const { activityStore } = useStore();
+    const { selectedActivity, editMode } = activityStore; //de structuring the activityStore
+
     return (
         <Grid>
             <GridColumn width="10">
-                <ActivityList activities={activities}
-                    selectActivity={selectActivity}
-                    deleteActivity={deleteActivity}
-                    submitting={submitting}
-                />
+                <ActivityList />
             </GridColumn>
             <GridColumn width="6">
-                {selectedActivity &&  // this means if activities[0] && is not null then only execute 
-                    <ActivityDetails
-                        activity={selectedActivity}
-                        cancelSelectActivity={cancelSelectActivity}
-                        openForm={openForm}
-                    />}
+                {selectedActivity && !editMode &&// this means if activities[0] && is not null then only execute 
+                    <ActivityDetails />}
                 {editMode &&
-                    <ActivityForm
-                        closeForm={closeForm}
-                        activity={selectedActivity}
-                        createOrEdit={createOrEdit} 
-                        submitting={submitting}
-                    />}
+                    <ActivityForm/>}
             </GridColumn>
         </Grid>
     )
-}
+})
