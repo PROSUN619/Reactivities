@@ -14,6 +14,7 @@ export default function NavBar(){
                     Reactivities
                 </Menu.Item>
                 <Menu.Item name="Activities" as={NavLink} to="/activities" />
+                <Menu.Item name="Errors" as={NavLink} to="/errors" />
                 <Menu.Item >
                     {/* <Button onClick={() => activityStore.openForm()} positive content="Create Activity"/> */}
                     <Button as={NavLink} to="/createActivity" positive content="Create Activity"/>

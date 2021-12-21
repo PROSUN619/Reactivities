@@ -1,0 +1,57 @@
+https://github.com/coreybutler/nvm-windows/releases  //nvm install
+nvm list // list of all node installed
+nvm use 12.20.1 // use specific node version
+nvm install 12.20.1 // install a version
+https://github.com/trycatchlearn/reactivities // git hub repository
+dotnet --info  // see version installed
+dotnet --h // list of all dotnet command
+dotnet new -l // list of all project type
+mkdir Reactivities
+dotnet new sln // create a solution file
+dir // to view all files in that folder
+dotnet new webapi -n API  // create a api project with name "API"
+dotnet new classlib -n Application // create a class library project with name "Application"
+dotnet sln add API   // add project file with solution file(.csproj file)
+dotnet sln list // to see all project file associated with solution
+----- add dependancy/reference of Application project
+cd API
+dotnet add reference ../Application
+-----
+cd .. get pack to parent folder
+dotnet run
+dotnet watch run // to add a file watcher so that changes are auto build 
+dotnet restore // restore the nuget package  use this on solution level
+------------migrating entity framework to databae tables
+cd .. go to solution folder
+dotnet tool list --global  // 
+dotnet tool install --global dotnet-ef --version 6.0.0 // use the matching version from nuget
+dotnet tool update --global dotnet-ef --version 6.0.0 //update if exists
+dotnet ef -h // list of command available
+dotnet ef migrations add InitialCreate -p Persistence -s API
+----
+dotnet ef database -h   // see all comands to created database
+git status // to know whether its a git repository or not 
+git init // make folder a git repository
+dotnet new gitignore // create gitignore file
+git branch -M main // create main branch
+------ react app
+npx create-react-app client-app --use-npm --template typescript  // create react app
+npm start // start the react app
+npm run build // bundle the app for production server
+npm test //starts the test runner
+localhost:3000
+npm install axios // just like ajax
+npm install semantic-ui-react semantic-ui-css // use this like bootstrap
+npm install uuid
+npm i --save-dev @types/uuid
+npm install mobx mobx-react-lite // install mobx for state management and observable
+npm install react-router-dom@5.3.0 @types/react-router-dom@5.3.2 // install routing
+// async method always return a promise
+// () used in arrow function to return a value where {} is not
+// use clearing tag to remove any previous float or manage designing
+put your code inside <></> (fragment) to return single component
+npm install react-calendar // install react calender
+npm install @types/react-calendar //
+add fluent validation to the application layer to add validation using nuget package
+npm install react-toastify // install toast in react application 
+dotnet ef database drop -s API -p Persistence // to drop the database
