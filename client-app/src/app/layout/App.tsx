@@ -31,10 +31,11 @@ function App() {
                 <Route exact path="/activities" component={ActivityDashboard} />
                 <Route path="/activities/:id" component={ActivityDetails} />
                 <Route key={location.key} path={["/createActivity", "/manage/:id"]} component={ActivityForm} />
+                {/*Navigate the above link either create activity or manage activity*/}
                 <Route path='/errors' component={TestErrors}/>
                 <Route path='/server-error' component={ServerError}/>
                 <Route component={NotFound}/>
-                {/* add key to activity form to reload reload component when key changes*/}
+                {/* add key to activity form to reload component when key changes*/}
               </Switch>
             </Container>
           </>

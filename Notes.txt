@@ -55,3 +55,22 @@ npm install @types/react-calendar //
 add fluent validation to the application layer to add validation using nuget package
 npm install react-toastify // install toast in react application 
 dotnet ef database drop -s API -p Persistence // to drop the database
+//install formik to work with forms in react
+npm install formik
+//change multiple ocuurenace in vs code
+1)ctrl+D
+2)ctrl+shift+L 
+//to use validation in forms in formik install yup
+npm install yup
+npm install @types/yup --save-dev
+//install react datepicker
+npm install react-datepicker or npm install react-datepicker --legacy-peer-deps
+npm install @types/react-datepicker --save-dev
+//**********************************few syntax******************
+activity! => emphasize that the activity cannot be null (bang operator)
+!!error.value => says if error.value has some value
+x ?? " x is Null" => null coalesing
+// install date fns to work with date object in browser
+npm ls date-fns
+then install the version //visit the documentation to use date formatting
+
