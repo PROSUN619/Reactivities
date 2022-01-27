@@ -27,7 +27,11 @@ dotnet tool list --global  //
 dotnet tool install --global dotnet-ef --version 6.0.0 // use the matching version from nuget
 dotnet tool update --global dotnet-ef --version 6.0.0 //update if exists
 dotnet ef -h // list of command available
-dotnet ef migrations add InitialCreate -p Persistence -s API
+dotnet ef migrations add InitialCreate -p Persistence -s API  **** Goto Solution folder
+dotnet ef database update -p Persistence -s API
+InitialCreate : comment
+-p  Persistence : Project name
+ -s API : Start Up Project                       
 ----
 dotnet ef database -h   // see all comands to created database
 git status // to know whether its a git repository or not 
@@ -73,4 +77,7 @@ x ?? " x is Null" => null coalesing
 // install date fns to work with date object in browser
 npm ls date-fns
 then install the version //visit the documentation to use date formatting
+install Microsoft.aspnetcore.identity.entityframeworkcore from nuget
+//to use token based authentication (JWT) install below package
+Microsoft.aspnetcore.authentication.JWTBearer
 

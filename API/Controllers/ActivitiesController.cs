@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Application.Activities;
 using Domain;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
@@ -30,6 +31,8 @@ namespace API.Controllers
 
         }
 
+        //[Authorize] // this will authorize our client with JWT Token
+        //above code is not required over and over again bcz we have centralised our authorization in startup configureService
         [HttpGet("{id}")]
         public async Task<IActionResult> GetActivity(Guid id)
         {
