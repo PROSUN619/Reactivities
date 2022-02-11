@@ -53,12 +53,16 @@ namespace API.Controllers
         {
                if (await _userManger.Users.AnyAsync(x => x.Email == registerDto.Email))
                {
-                   return BadRequest("Email Token");
+                   ModelState.AddModelError("email","Email Taken");
+                   return ValidationProblem();
+                   //return BadRequest("Email Taken");
                }
 
                if (await _userManger.Users.AnyAsync(x => x.UserName == registerDto.UserName))
                {
-                   return BadRequest("Username Token");
+                   ModelState.AddModelError("username","Username Taken");
+                   return ValidationProblem();
+                  // return BadRequest("Username Taken");
                }
 
                var user = new AppUser()
@@ -86,7 +90,7 @@ namespace API.Controllers
             var user = await _userManger.FindByEmailAsync(User.FindFirstValue(ClaimTypes.Email));  
 
             return CreateUserObject(user);
-
+                
         }
 
         private UserDto CreateUserObject(AppUser user)

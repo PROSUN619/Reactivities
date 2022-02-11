@@ -20,7 +20,7 @@ export default observer(function ActivityDashBoard() {
 
 
 
-    if (activityStore.loadingInitial) return <LoadingComponent content='Loading App' />
+    if (activityStore.loadingInitial) return <LoadingComponent content='Loading Activities' />
 
     return (
         <Grid>
